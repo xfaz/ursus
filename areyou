@@ -1,0 +1,73 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "TP Keybinds",
+    LoadingTitle = "Windows Support Hub",
+    LoadingSubtitle = "scriptblox.com",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "Windows 69"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "ABCD", -- The Discord invite code, do not include discord.gg/
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Windows support hub",
+       Subtitle = "Key System",
+       Note = "Join the discord (discord.gg/sirius)",
+       FileName = "SiriusKey",
+       SaveKey = true,
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = "Hello"
+    }
+ })
+
+    local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
+    local Section = Tab:CreateSection("Main Stuff")
+
+    local Button = Tab:CreateButton({
+        Name = "TP To Second End keybind is T",
+        Callback = function()
+            local player = game.Players.LocalPlayer
+
+local function AutoTeleport()
+    player.Character:MoveTo(Vector3.new(-173, 4868, -71495))
+end
+
+local Button = Tab:CreateButton({
+    Name = "Infinite Yield",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))();
+    end,
+ })
+
+ local Button = Tab:CreateButton({
+    Name = "Disable Ragdoll / not working and its better having ramps deleted than this",
+    Callback = function()
+      local Ragdoll = gameGetService(Workspace).Player.Ragdoll
+      if Ragdoll then
+          Ragdoll.Enabled = false
+      end   
+    end,
+ })
+
+ local Button = Tab:CreateButton({
+   Name = "DELETE RAMPS FROM SLIDE 1",
+   Callback = function()
+      local folder = game:GetService("Workspace").Slide1.Ramps
+      if folder then
+          folder:Destroy()
+     end   
+   end,
+})
+
+game.ContextActionService:BindAction("AutoTeleport", AutoTeleport, false, Enum.KeyCode.T)
+        end,
+     })
+
+
+Rayfield:LoadConfiguration()
